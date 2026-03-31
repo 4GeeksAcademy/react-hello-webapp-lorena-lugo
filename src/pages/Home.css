@@ -1,0 +1,33 @@
+body {
+  background-image: url("https://images.unsplash.com/photo-1446776811953-b23d57bd21aa");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* Capa oscura para que se lea bien el contenido */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Cards estilo Star Wars */
+.home-card {
+  background-color: rgba(20, 20, 20, 0.9);
+  color: white;
+  border: 1px solid #333;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 232, 31, 0.6);
+}
+
+/* Títulos */
+.section-title {
+  color: #ffe81f;
+  margin-bottom: 20px;
+}
