@@ -29,14 +29,10 @@ const People = () => {
     if (!people) return <p>Cargando...</p>
 
     return (
-        <div className="container d-flex justify-content-center align-items-center min-vh-100">
+        <div className="container d-flex justify-content-center mt-5">
             <div className="card mb-3" style={{
                 maxWidth: "850px",
-                minHeight: "500px",
-                background: "rgba(20, 20, 30, 0.85)",
-                color: "white",
-                border: "1px solid rgba(255,255,255,0.1)",
-                backdropFilter: "blur(8px)"
+                minHeight: "500px",             
             }}>
                 <div className="row g-0 h-100">
                     <div className="col-md-4 h-100" style={{ padding: 0 }}>
@@ -44,7 +40,7 @@ const People = () => {
                     </div>
                     <div className="col-md-8">
                         <div className="card-body text-center ">
-                            <h5 className="card-title" style={{ letterSpacing: "2px", textTransform: "uppercase" }}>{people.name}</h5>
+                            <h5 className="card-title" >{people.name}</h5>
                             <p className="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime earum vero quae distinctio ab ducimus hic aspernatur tempora minima dolorum delectus, quo, itaque consectetur quos. Nobis repellat itaque soluta assumenda?</p><br />
                             <ul className="list-group  list-group-flush mt-4">
                                 <li className="list-group-item fs-5"><strong>Birth year:</strong>  {people.birth_year}</li>

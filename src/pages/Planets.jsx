@@ -25,7 +25,7 @@ const Planets = () => {
     return (
 
 
-       <div className="container d-flex justify-content-center mt-4">
+       <div className="container d-flex justify-content-center mt-5">
             <div className="card mb-3" style={{ maxWidth: "800px", minHeight: "500px" }}>
                 <div className="row g-0 h-100">
                     <div className="col-md-4 h-100" style={{ padding: 0 }}>
