@@ -16,7 +16,7 @@ export const Home = () => {
 				payload: response.results
 			})
 		}
-		if (store.people.length === 0 ) getPeople()  // solo si no hay datos 
+		if (store.people.length === 0) getPeople()  // solo si no hay datos 
 
 	}, [])
 
@@ -29,7 +29,7 @@ export const Home = () => {
 				payload: response.results
 			})
 		}
-		if(store.planets.length === 0 ) getPlanets()
+		if (store.planets.length === 0) getPlanets()
 
 	}, [])
 
@@ -42,7 +42,7 @@ export const Home = () => {
 				payload: response.results
 			})
 		}
-		if(store.vehicles.length === 0) getVehicles()
+		if (store.vehicles.length === 0) getVehicles()
 	}, [])
 
 
@@ -53,99 +53,79 @@ export const Home = () => {
 
 
 	return (
-		<div className="overlay">
-		<div>
-			<h2 className="section-title"> Characters</h2>
-			<div className="row flex-nowrap overflow-auto">
+  <div className="overlay">
+    <div>
 
-				{store.people.map(People =>
+      <h2 className="section-title">Characters</h2>
+      <div className="cards-scroll">
+        {store.people.map(People => (
+          <div className="card-item" key={People.uid}>
+            <div className="card home-card">
+              <img src={`/images/${People.name}.jpg`} className="card-img-top" alt={People.name}
+                onError={(e) => e.target.src = "/images/placeholder.webp"}
+              />
+              <div className="card-body">
+                <h5 className="card-title title-starwars">{People.name}</h5>
+              </div>
+              <div className="card-body d-flex justify-content-between align-items-center">
+                <Link to={`/people/${People.uid}`} className="btn btn-yellow">Learn More</Link>
+                <button className="btn-heart" onClick={() => dispatch({
+                  type: "add_favorite",
+                  payload: { uid: People.uid, name: People.name, type: "people" }
+                })}>💛</button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-					<div className="col-4" key={People.uid}>
-						<div className="card home-card" style={{ width: "18rem" }}>
-							<img src={"https://i.pinimg.com/1200x/ca/2a/52/ca2a52fd4fbe2689507309448ebf04f2.jpg"} className="card-img-top" alt="personajes star wars" />
-							<div className="card-body">
-								<h5 className="card-title">{People.name}</h5>
-								<p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-							</div>
-							
-							<div className="card-body card-body d-flex justify-content-between align-items-center ">
-								<Link to={`/people/${People.uid}`}>Leer más</Link>
-								<button onClick={() => dispatch({
-									type: "add_favorite",
-									payload: { uid: People.uid, name: People.name, type: "people" }
-								})}> 🖤 </button>
+      <h2 className="section-title">Planets</h2>
+      <div className="cards-scroll">
+        {store.planets.map(Planets => (
+          <div className="card-item" key={Planets.uid}>
+            <div className="card home-card">
+              <img   src={`/images/${Planets.name}.jpg`}className="card-img-top" alt={Planets.name}
+                onError={(e) => e.target.src = "/images/placeholder.webp"}
+              />
+              <div className="card-body">
+                <h5 className="card-title title-starwars">{Planets.name}</h5>
+              </div>
+              <div className="card-body d-flex justify-content-between align-items-center">
+                <Link to={`/planets/${Planets.uid}`} className="btn btn-yellow">Learn More</Link>
+                <button className="btn-heart" onClick={() => dispatch({
+                  type: "add_favorite",
+                  payload: { uid: Planets.uid, name: Planets.name, type: "planets" }
+                })}>💛</button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
+      <h2 className="section-title">Vehicles</h2>
+      <div className="cards-scroll">
+        {store.vehicles.map(Vehicles => (
+          <div className="card-item" key={Vehicles.uid}>
+            <div className="card home-card">
+              <img   src={`/images/${Vehicles.name}.jpg`} className="card-img-top" alt={Vehicles.name}
+                onError={(e) => e.target.src = "/images/placeholder.webp"}
+              />
+              <div className="card-body">
+                <h5 className="card-title title-starwars">{Vehicles.name}</h5>
+              </div>
+              <div className="card-body d-flex justify-content-between align-items-center">
+                <Link to={`/vehicles/${Vehicles.uid}`} className="btn btn-yellow">Learn More</Link>
+                <button className="btn-heart" onClick={() => dispatch({
+                  type: "add_favorite",
+                  payload: { uid: Vehicles.uid, name: Vehicles.name, type: "vehicles" }
+                })}>💛</button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
 
-							</div>
-						</div>
-					</div>
-				)}
-
-
-			</div>
-
-			<h2 className="section-title"> Planets</h2>
-			<div className="row flex-nowrap overflow-auto">
-
-				{store.planets.map(Planets =>
-
-					<div className="col-4 " key={Planets.uid}>
-						<div className="card home-card" style={{ width: "18rem" }}>
-							<img src={"https://i.pinimg.com/1200x/94/aa/08/94aa08b4be81106c5973ad9ee176d209.jpg"} className="card-img-top" alt="Planetas star wars" />
-							<div className="card-body">
-								<h5 className="card-title">{Planets.name}</h5>
-								<p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-							</div>
-							
-							<div className="card-body d-flex justify-content-between align-items-center">
-								<Link to={`/planets/${Planets.uid}`}>Leer más</Link>
-							
-								<button onClick={() => dispatch({
-									type: "add_favorite",
-									payload: { uid: Planets.uid, name: Planets.name, type: "planets" }
-								})}> 🖤 </button>
-
-
-							</div>
-						</div>
-					</div>
-				)}
-
-
-			</div>
-
-			<h2 className="section-title"> Vehicles</h2>
-			<div className="row flex-nowrap overflow-auto">
-
-				{store.vehicles.map(Vehicles =>
-
-					<div className="col-4" key={Vehicles.uid}>
-
-						<div className="card home-card" style={{ width: "18rem" }}>
-							<img src={"https://i.pinimg.com/736x/3e/b6/d9/3eb6d9ec70992944d2338609b7c5c1a1.jpg"} className="card-img-top" alt="Vehiculos star wars" />
-							<div className="card-body">
-								<h5 className="card-title">{Vehicles.name}</h5>
-								<p className="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
-							</div>
-							
-							<div className="card-body d-flex justify-content-between align-items-center">
-								<Link to={`/vehicles/${Vehicles.uid}`}>Leer más</Link>
-								<button onClick={() => dispatch({
-									type: "add_favorite",
-									payload: { uid: Vehicles.uid, name: Vehicles.name, type: "vehicles" }
-								})}> 🖤 </button>
-
-
-							</div>
-						</div>
-					</div>
-				)}
-
-
-			</div>
-
-		</div>
-		</div>
-
-	);
+    </div>
+  </div>
+);
 }; 

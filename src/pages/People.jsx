@@ -36,7 +36,7 @@ const People = () => {
             }}>
                 <div className="row g-0 h-100">
                     <div className="col-md-4 h-100" style={{ padding: 0 }}>
-                        <img src={"https://i.pinimg.com/736x/d1/e5/7b/d1e57bf9d0cae16baa57eeffa09863f9.jpg"} className="img-fluid rounded-start" style={{ height: "100%", objectFit: "cover" }} />
+                        <img  src={`/images/${people.name}.jpg`} className="img-fluid rounded-start" style={{ height: "100%", objectFit: "cover" }} />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body text-center ">

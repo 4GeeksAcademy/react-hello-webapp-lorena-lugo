@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom"
 const Vehicles = () => {
 
     const [vehicle, setVehicle] = useState()
-    const params = useParams()
+    const params = useParams()   
 
 
 
@@ -24,10 +24,18 @@ const Vehicles = () => {
     return (
         <div className="container d-flex justify-content-center mt-5">
             <div className="card mb-3" style={{ maxWidth: "800px", minHeight: "500px" }}>
-                <div className="row g-0 h-100">
-                    <div className="col-md-4 h-100" style={{ padding: 0 }}>
-                        <img src={"https://i.pinimg.com/736x/a5/72/aa/a572aa5eb94c0b9a754296642f57baee.jpg"} className="img-fluid rounded-start" style={{ height: "100%", objectFit: "cover" }} />
+                <div className="row g-0 h-100" style={{ minHeight: "400px" }}>
+
+                    <div className="col-md-4 d-flex align-items-center justify-content-center bg-light">
+                        <img
+                            src={`/images/${vehicle.name}.jpg`}
+                            className="img-fluid rounded-start"
+                            style={{ maxHeight: "100%", maxWidth: "100%", objectFit: "contain" }}
+                        />
                     </div>
+
+
+
                     <div className="col-md-8">
                         <div className="card-body text-center">
                             <h5 className="card-title"> <strong>{vehicle.name}</strong></h5>

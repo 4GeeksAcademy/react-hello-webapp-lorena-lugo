@@ -4,7 +4,7 @@
     border-top: 1px solid rgba(125, 211, 252, 0.2);
 }
 
-/* TEXTO */
+
 .footer-text {
     color: #7dd3fc;
     letter-spacing: 2px;
@@ -13,7 +13,7 @@
     transition: all 0.3s ease;
 }
 
-/* 🔥 EFECTO HOVER (esto es lo que te gustaba) */
+
 .footer-text:hover {
     color: #ffffff;
     text-shadow: 0 0 15px #00d4ff, 0 0 25px #00d4ff;

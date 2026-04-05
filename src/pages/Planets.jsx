@@ -29,7 +29,7 @@ const Planets = () => {
             <div className="card mb-3" style={{ maxWidth: "800px", minHeight: "500px" }}>
                 <div className="row g-0 h-100">
                     <div className="col-md-4 h-100" style={{ padding: 0 }}>
-                        <img src={"https://i.pinimg.com/1200x/0a/d2/97/0ad297a6790002b4e32feba78995951e.jpg"} className="img-fluid rounded-start" style={{ height: "100%", objectFit: "cover" }} />
+                        <img  src={`/images/${planet.name}.jpg`} className="img-fluid rounded-start" style={{ height: "100%", objectFit: "cover" }} />
                     </div>
                     <div className="col-md-8">
                         <div className="card-body text-center">

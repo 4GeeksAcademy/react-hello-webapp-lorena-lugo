@@ -1,6 +1,8 @@
 import { Link, } from "react-router-dom";
 import useGlobalReducer from "../hooks/useGlobalReducer.jsx";
 import { useState } from "react";
+import "./Navbar.css";
+
 
 export const Navbar = () => {
 
@@ -66,8 +68,8 @@ export const Navbar = () => {
 
                 <div className="dropdown">
 
-                    {/* //Boton favoritos */}
-                    <button className="btn btn-primary" onClick={() => setOpen(!open)}>
+                    
+                    <button className="btn btn-outline-warning" onClick={() => setOpen(!open)}>
                         Favorites ({store.favorites.length})
                     </button>
 
